@@ -29,7 +29,8 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.projectlombok:lombok')
+    //implementation('org.projectlombok:lombok')
+    compileOnly('org.projectlombok:lombok')
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation('com.h2database:h2:')
     implementation('org.springframework.boot:spring-boot-starter-mustache')
@@ -40,8 +41,9 @@ dependencies {
     annotationProcessor('org.projectlombok:lombok')
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
     testImplementation("org.springframework.security:spring-security-test")
+    testCompileOnly('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
 }
 
 /*dependencies {
