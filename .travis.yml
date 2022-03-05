@@ -6,9 +6,6 @@ branches: # Travis CI를 어느 브랜치가 푸시될 때 수행할지 지정
   only:
     - main
 
-before_install:
-  chmod +x gradlew
-
 before_deploy:  # deploy 명령어가 실행되기 전에 수행된다.
   - zip -r bootpractice * # 현재 위치의 모든 파일을 bootpactice 이름으로 압축(zip)하겠다.
   - mkdir -p deploy # deploy라는 디렉토리를 Travis CI가 실행 중인 위치에서 생성
