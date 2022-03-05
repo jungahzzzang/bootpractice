@@ -4,7 +4,7 @@ jdk:
 
 branches: # Travis CI를 어느 브랜치가 푸시될 때 수행할지 지정
   only:
-    - master
+    - main
 
 # Travis CI 서버의 Home
 cache:  # Gradle을 통해 의존성을 받게 되면,
