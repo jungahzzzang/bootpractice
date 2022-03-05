@@ -37,7 +37,7 @@ deploy: # s3로 파일 업로드 혹은 CodeDeploy로 배포 등 외부 서비�
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: flex-springboot-build
-    key: flex-springboot2-webservice.zip
+    key: bootpractice.zip
     bundle_type: zip #압축 확장자
     application: flex-springboot2-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
     deployment_group: flex-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
