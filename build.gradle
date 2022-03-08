@@ -27,7 +27,7 @@ plugins{
 //apply plugin: 'io.spring.dependency-management'     //스프링부트의 의존성을 관리해주는 플러그인!!!중요!!
 
 group 'com.book'
-version '1.0.1-SNAPSHOT'
+version '1.0.1-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = 1.8
 
 repositories {

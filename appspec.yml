@@ -2,7 +2,7 @@ version: 0.0  # CodeDeploy 버전, 프로젝트 버전이 아니므로 0.0 이�
 os: linux
 files:
   - source: /  # CodeDeploy에서 전달해 준 파일 중 destination으로 이동시킬 대상을 루트 경로로 지정
-    destination: /home/ec2-user/app/step2/zip/  # source에서 지정된 파일을 받을 위치.
+    destination: /home/ec2-user/app/step3/zip/  # source에서 지정된 파일을 받을 위치.
     overwrite: yes  # 기존에 파일들이 있으면 덮어쓸지를 결정함.
 
 permissions:  # CodeDeploy에서 EC2 서버로 넘겨준 파일들을 모두 ec2-user 권한을 갖도록함.
@@ -12,7 +12,18 @@ permissions:  # CodeDeploy에서 EC2 서버로 넘겨준 파일들을 모두 ec2
     group: ec2-user
 
 hooks:  #CodeDeploy 배포 단계에서 실행할 명령어 지정정
+  AfterInstall:
+    - location: stop.sh # 엔진엑스와 연결되어 있지 않은 스프링부트를 종료함.
+      timeout: 60
+      runas: ec2-user
+
   ApplcationStart:
-    - location: deploy.sh
+    - location: start.sh
+
+      timeout: 60
+      runas: ec2-user
+
+  ValidateService:
+    - location: health.sh
       timeout: 60
       runas: ec2-user
