@@ -19,7 +19,6 @@ hooks:  #CodeDeploy 배포 단계에서 실행할 명령어 지정정
 
   ApplcationStart:
     - location: start.sh
-
       timeout: 60
       runas: ec2-user
 
